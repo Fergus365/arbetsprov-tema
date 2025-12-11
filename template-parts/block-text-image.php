@@ -10,22 +10,16 @@ $image = get_field('text_image_image');
     <div class="text-wrap">
         <?php if($text): ?>
         <h2><?php echo esc_html($text);?></h2>
-    <?php else: ?>
-      <h2>Rubrik</h2>
     <?php endif; ?>
 
     <?php if($textArea): ?>
         <p><?php echo esc_html($textArea);?></p>
-    <?php else: ?>
-      <p>Text här</p>
     <?php endif; ?>
     </div>
     <?php if($image): ?>
       <div class="image-wrap">
-        <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+        <img src="<?php echo esc_url($image['sizes']['large']); ?>">
       </div>
-    <?php else: ?>
-      <div class="image-wrap placeholder">Bild plats</div>
     <?php endif; ?>
   </div>
 </section>
