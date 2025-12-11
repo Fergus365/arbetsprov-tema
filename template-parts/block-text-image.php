@@ -22,7 +22,7 @@ $image = get_field('text_image_image');
     </div>
     <?php if($image): ?>
       <div class="image-wrap">
-        <img src="<?php echo esc_url($image['sizes']['large'] ?? $image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+        <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
       </div>
     <?php else: ?>
       <div class="image-wrap placeholder">Bild plats</div>

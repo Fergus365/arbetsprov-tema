@@ -2,6 +2,7 @@
 $gallery_title = get_field("gallery_title");
 $images = [];
 
+// Hämtar alla bilder
 for ($i = 1; $i <= 5; $i++) {
     $img = get_field("gallery_image_$i");
     if ($img) {
@@ -18,9 +19,10 @@ for ($i = 1; $i <= 5; $i++) {
     <?php if ($images): ?>
       <?php foreach ($images as $image): ?>
         <div class="gallery-item">
+          <a href="<?php echo esc_url($image['url']); ?>" class="glightbox" data-gallery="acf-gallery">
           <img 
-            src="<?php echo esc_url($image['sizes']['full'] ?? $image['url']); ?>" 
-            alt="<?php echo esc_attr($image['alt']); ?>">
+            src="<?php echo esc_url($image['url']); ?>">
+      </a>
         </div>
       <?php endforeach; ?>
     <?php else: ?>

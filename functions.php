@@ -7,11 +7,15 @@ function wp_enqueue_assets() {
 }
 add_action('wp_enqueue_scripts', 'wp_enqueue_assets');
 
-// Support
-add_theme_support('post-thumbnails');
-add_theme_support('title-tag');
-
-// Meny
+// Meny Support
 register_nav_menus([
     'primary' => 'Primär meny'
 ]);
+
+// Lightbox Support
+function enqueue_acf_lightbox() {
+    wp_enqueue_style('glightbox-css', 'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css');
+    wp_enqueue_script('glightbox-js', 'https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js', array(), null, true);
+    wp_enqueue_script('acf-lightbox-init', get_template_directory_uri() . '/js/acf-lightbox.js', array('glightbox-js'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_acf_lightbox');
