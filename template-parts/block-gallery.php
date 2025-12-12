@@ -25,8 +25,6 @@ for ($i = 1; $i <= 5; $i++) {
       </a>
         </div>
       <?php endforeach; ?>
-    <?php else: ?>
-      <p>Inga bilder tillagda</p>
     <?php endif; ?>
   </div>
 </section>
