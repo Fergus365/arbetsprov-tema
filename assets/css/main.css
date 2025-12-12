@@ -24,6 +24,7 @@ section {
     text-decoration: none;
     text-transform: capitalize;
     color: #1a1a1a;
+    margin-right: 1rem;
 }
 
 .nav-header {
